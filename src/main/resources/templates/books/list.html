@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th=”http://www.thymeleaf.org”>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Lista ksiazek</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Tytul</th>
+        <th>Wydawca</th>
+    </tr>
+    <tr th:each="book : ${books}">
+        <!--Thymeleaf reference - for each book thymeleaf will render the proper element-->
+        <td th:text="${book.id}">ID KSIAZKI</td>
+        <td th:text="${book.title}">TYTUL KSIAZKI</td>
+        <td th:text="${book.publisher.name}">WYDAWCA</td>
+        <!--wartosc z caps locka zostana zastapione -->
+    </tr>
+</table>
+
+</body>
+</html>

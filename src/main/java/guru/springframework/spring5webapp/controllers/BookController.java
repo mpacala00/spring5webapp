@@ -1,11 +1,13 @@
 package guru.springframework.spring5webapp.controllers;
 
 import guru.springframework.spring5webapp.repositories.BookRepository;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@EnableAutoConfiguration
 public class BookController {
 
     private final BookRepository bookRepository;
@@ -23,6 +25,7 @@ public class BookController {
         model.addAttribute("books", bookRepository.findAll());
         //atrybut do modelu
 
-        return "books";
+        return "books/list"; //zwroc list.html w resources/templates.books
+        //btw books to directory w folderze templates
     }
 }
